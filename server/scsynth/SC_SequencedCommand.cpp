@@ -631,6 +631,7 @@ bool BufReadCmd::Stage2()
 	return false;
 #else
 	SF_INFO fileinfo;
+	memset(&fileinfo, 0, sizeof(fileinfo));
 
 	SndBuf *buf = World_GetNRTBuf(mWorld, mBufIndex);
 	int framesToEnd = buf->frames - mBufOffset;
